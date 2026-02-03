@@ -1,0 +1,43 @@
+body{
+    background-image: url("/images/istockphoto-477516876-2048x2048.jpg");
+    background-size: 2430px;
+}
+.cabecera{
+    background-color: black;
+    color: white;
+     border:1px solid rgb(255, 255, 255);
+}
+.piedepagina{
+    background-color: black;
+    color: white;
+    height: 60px;
+    border:1px solid rgb(255, 255, 255);
+}
+.opciones{
+        text-align: center;
+}
+a{
+    background-color:rgb(50, 50, 167);
+    color: aliceblue;
+    width: 90px;
+    text-align: center;
+    font-size: 20px;
+     border:1px solid rgb(190, 186, 186);
+}
+.cuerpo{
+    background-color: rgb(197, 198, 199);
+    margin: 4px;
+     border:1px solid rgb(255, 255, 255);
+}
+h1{
+  text-align: center;
+}
+.textoPie{
+   left: 20px;
+   text-align: center;
+    
+    font-size: 20px;
+}
+table, th, td {
+  border:1px solid black;
+}
