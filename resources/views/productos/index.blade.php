@@ -12,6 +12,7 @@
             <th>Stock</th>
             <th>Precio</th>
             <th>Categoría</th>
+            <th>Proovedor</th>
           </tr>
        </thead>
      <tbody>
@@ -22,6 +23,7 @@
          <td>{{ $p->stock }}</td>
          <td>{{ number_format($p->precio, 2) }}</td>
          <td>{{ $p->categoria?->nombre }}</td>
+         <td>{{ $p->proovedores?->nombre }}</td>
        </tr>
       @empty
       <tr>

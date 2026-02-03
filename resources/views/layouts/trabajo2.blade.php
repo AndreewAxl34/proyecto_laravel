@@ -18,12 +18,13 @@
 <!---opciones-->
 <br>
 <nav class="opciones">
-    <a href="{{route('home')}}" class="btn btn-primary">OPCION1:Inicio</a>
-    <a href="{{route('productos.anadir')}}" class="btn btn-primary">OPCION2_2:Crear Categorias</a>
-    <a href="{{route('productos.creacion')}}" class="btn btn-primary">OPCION2_1:Entrada de Datos</a>
-    <a href="{{route('productos.index')}}" class="btn btn-primary">OPCION3:Listado General</a>
-    <a href="{{route('productos.filtro.form')}}" class="btn btn-primary">OPCION4:Listado Filtrado</a>
-    <a href="{{route('productos.manage')}}" class="btn btn-primary">OPCION5:Modificar/Borrar</a>
+    <a href="{{route('home')}}" class="btn btn-primary">Inicio</a>
+    <a href="{{route('productos.anadirproovedor')}}" class="btn btn-primary">Añadir Proovedor</a>
+    <a href="{{route('productos.anadircategoria')}}" class="btn btn-primary">Añadir Categoria</a>
+    <a href="{{route('productos.creacion')}}" class="btn btn-primary">Entrada de Datos</a>
+    <a href="{{route('productos.index')}}" class="btn btn-primary">Listado General</a>
+    <a href="{{route('productos.filtro.form')}}" class="btn btn-primary">Listado Filtrado</a>
+    <a href="{{route('productos.manage')}}" class="btn btn-primary">Modificar/Borrar</a>
 </nav>
 <!----Final opciones---->
 <!----cuerpo----->

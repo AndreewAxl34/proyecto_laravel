@@ -6,7 +6,10 @@ use App\Http\Controllers\ProductController;
 Route::get('/', fn() => view('home'))->name('home');
 
 Route::get('/productos', [ProductController::class, 'index'])->name('productos.index');
-Route::get('/productos/anadir', [ProductController::class, 'anadir'])->name('productos.anadir');
+Route::get('/productos/anadirproovedor', [ProductController::class, 'anadirproovedor'])->name('productos.anadirproovedor');
+Route::post('/proovedores',[ProductController::class, 'prove'])->name('proovedores.guardar');
+
+Route::get('/productos/anadircategoria', [ProductController::class, 'anadircategoria'])->name('productos.anadircategoria');
 Route::post('/categorias',[ProductController::class, 'catego'])->name('categorias.guardar');
 
 Route::get('/productos/creacion', [ProductController::class, 'creacion'])->name('productos.creacion');

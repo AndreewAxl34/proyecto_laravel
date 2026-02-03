@@ -3,40 +3,58 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categoria;
+use App\Models\Proovedores;
 use App\Models\Productos;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 { 
-    // Opcion2_1 Añadir Categorias 
-    public function anadir(){
-        $categorias=Categoria::orderBy('nombre')->get();
-        return view('productos.anadir',compact('categorias'));
+    // Opcion2 Añadir Proovedor
+    public function anadirproovedor(){
+        $proovedores=Proovedores::orderBy('nombre')->get();
+        return view('productos.anadirproovedor',compact('proovedores'));
     }
 
-     // Opcion2_1 Guardar categorias
+     // Opcion2_1 Guardar Proovedor
+    public function prove(Request $request){
+        $data = $request->validate([
+            'nombre' => 'required|min:3'
+        ]);
+        Categoria::create($data);
+        return redirect()->route('productos.anadirproovedor')->
+        with('ok', 'Proovedor guardado correctamente');
+    }
+
+    // Opcion3 Añadir Categorias 
+    public function anadircategoria(){
+        $categorias=Categoria::orderBy('nombre')->get();
+        return view('productos.anadircategoria',compact('categorias'));
+    }
+
+     // Opcion3_1 Guardar categorias
     public function catego(Request $request){
         $data = $request->validate([
             'nombre' => 'required|min:3'
         ]);
         Categoria::create($data);
-        return redirect()->route('productos.anadir')->
+        return redirect()->route('productos.anadircategoria')->
         with('ok', 'Categoria guardado correctamente');
     }
    
-    //Opcion2_2: Entrada de datos 
+    //Opcion4: Entrada de datos 
     public function creacion(){
         $categorias=Categoria::orderBy('nombre')->get();
         return view('productos.creacion',compact('categorias'));
     }
 
-    //Opcion2_2: Guardar datos formulario
+    //Opcion5: Guardar datos formulario
     public function tienda(Request $request){
        $data = $request->validate([
          'descripcion' => 'required|min:3',
          'stock' => 'required|integer|min:0',
          'precio' => 'required|numeric|min:0',
          'categoria_id' => 'required|exists:categorias,id',
+         'proovedor_id' => 'required|exists:proovedor_id',
         ]);
         Productos::create($data);
         return redirect()->route('productos.index')->
@@ -83,13 +101,17 @@ class ProductController extends Controller
     public function edit(Productos $productos){
         $categorias = Categoria::orderBy('nombre')->get();
         return view('productos.edit', compact('productos', 'categorias'));
+        $proovedores = Proovedores::orderBy('nombre')->get();
+        return view('productos.edit', compact('productos', 'proovedores'));
     }
+
     public function update(Request $request, Productos $productos){
         $data = $request->validate([
           'descripcion' => 'required|min:3',
           'stock' => 'required|integer|min:0',
           'precio' => 'required|numeric|min:0',
           'categoria_id' => 'required|exists:categorias,id',
+          'proovedor_id' => 'required|exists:categorias,id',
         ]);
         $productos->update($data);
         return redirect()->route('productos.manage')->

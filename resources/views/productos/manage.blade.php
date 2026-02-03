@@ -12,6 +12,7 @@
          <th>Descripción</th>
          <th>Categoría</th>
          <th>Acciones</th>
+         <th>Proovedor</th>
        </tr>
      </thead>
      <tbody>
@@ -20,6 +21,7 @@
          <td>{{ $p->id }}</td>
          <td>{{ $p->descripcion }}</td>
          <td>{{ $p->categoria?->nombre }}</td>
+         <td>{{ $p->proovedores?->nombre }}</td>
          <td>
            <a href="{{ route('productos.edit', $p) }}">Editar</a>
 
