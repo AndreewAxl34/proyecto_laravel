@@ -1,7 +1,9 @@
 @extends('layouts.trabajo2')
 @section('title', 'Listado filtrado')
 @section('content')
-<div>
+<div class="todoplantillas">
+<!-----fuentes----->
+  <link rel="stylesheet" href="{{ asset('css/colores.css') }}">
    <h2>Filtrar productos</h2>
 
    <form method="GET" action="{{ route('productos.filtro.results') }}">

@@ -2,31 +2,33 @@
 @section('title', 'Entrada de datos')
 
 @section('content')
-<div>
+<div class="todoplantillas">
+  <!-----fuentes----->
+  <link rel="stylesheet" href="{{ asset('css/colores.css') }}">
    <h2>Alta de producto</h2>
-
+  <!----Enlace relacionado para la funcion---->
    <form method="POST" action="{{ route('productos.tienda') }}">
-
      @csrf
+  <!---Cuerpo de la plantilla--->
      <div>
-       <label>Descripción</label>
+       <label class="labelCreacion">Descripción</label>
        <input name="descripcion" value="{{ old('descripcion') }}">
      </div>
-
+     <br>
      <div>
-       <label>Stock</label>
+       <label class="labelCreacion">Stock</label>
        <input type="number" name="stock" value="{{ old('stock', 0) }}">
      </div>
-      
+      <br>
      <div>
-       <label>Precio</label>
+       <label class="labelCreacion">Precio</label>
        <input type="number" step="0.01" name="precio" value="{{ old('precio', 0) }}">
      </div>
-
+     <br>
      <div>
-      <label>Categoría</label>
+      <label class="labelCreacion">Categoría</label>
       <select name="categoria_id">
-         <option value="">-- elige --</option>
+         <option value="">-- elige categoria --</option>
          @foreach($categorias as $c)
             <option value="{{ $c->id }}" @selected(old('categoria_id') == $c->id)>
               {{ $c->nombre }}
@@ -34,8 +36,20 @@
        @endforeach
       </select>
      </div>
-
+     <br>
+     <div>
+      <label class="labelCreacion">Proovedor</label>
+      <select name="proovedor_id">
+         <option value="">-- elige proovedor --</option>
+         @foreach($proovedores as $p)
+            <option value="{{ $p->id }}" @selected(old('proovedor_id') == $p->id)>
+              {{ $p->nombre }}
+            </option>
+       @endforeach
+      </select>
+     </div>
      <button>Guardar</button>
    </form>
+    <!---Cuerpo de la plantilla--->
 </div>
 @endsection

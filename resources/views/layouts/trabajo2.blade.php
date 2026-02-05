@@ -12,19 +12,30 @@
 <body>
 <!-----Cabebera----->
 <header class="cabecera">
-   <h1>Tienda de Informatica: Frikis-PC</h1>
+   <h1>Tienda de Informatica: Cyber-Freak</h1>
 </header>
 <!----Final Cabecera---->
 <!---opciones-->
-<br>
 <nav class="opciones">
-    <a href="{{route('home')}}" class="btn btn-primary">Inicio</a>
-    <a href="{{route('productos.anadirproovedor')}}" class="btn btn-primary">Añadir Proovedor</a>
-    <a href="{{route('productos.anadircategoria')}}" class="btn btn-primary">Añadir Categoria</a>
-    <a href="{{route('productos.creacion')}}" class="btn btn-primary">Entrada de Datos</a>
-    <a href="{{route('productos.index')}}" class="btn btn-primary">Listado General</a>
-    <a href="{{route('productos.filtro.form')}}" class="btn btn-primary">Listado Filtrado</a>
-    <a href="{{route('productos.manage')}}" class="btn btn-primary">Modificar/Borrar</a>
+  <div style="
+       font-size: 42px; 
+       position:relativa;
+       margin:-60px;
+       margin-top:30px;
+       margin-left:-1820px;">💻</div>
+  <br>
+    <a href="{{route('home')}}" class="enlaces">Inicio</a>
+    <a href="{{route('productos.anadirproovedor')}}" class="enlaces">Añadir Proveedor</a>
+    <a href="{{route('productos.anadircategoria')}}" class="enlaces">Añadir Categoria</a>
+    <a href="{{route('productos.creacion')}}" class="enlaces">Entrada de Datos</a>
+    <a href="{{route('productos.index')}}" class="enlaces">Listado General</a>
+    <a href="{{route('productos.filtro.form')}}" class="enlaces">Listado Filtrado</a>
+    <a href="{{route('productos.manage')}}" class="enlaces">Modificar/Borrar</a>
+  <div style="
+       font-size: 42px; 
+       margin-left:1770px; 
+       position: relative;
+       top:-30px;">🖥️</div>
 </nav>
 <!----Final opciones---->
 <!----cuerpo----->
@@ -43,6 +54,7 @@
 @yield('content')
 <br>
 </main>
+
 <!----Final cuerpo---->
 <!----pie de la pagina---->
 <footer class="piedepagina">

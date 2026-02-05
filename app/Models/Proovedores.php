@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Categoria;
 use App\Models\Productos;
 
-class Categoria extends Model
+class Proovedores extends Model
 {
    protected $fillable=['nombre'];
    public function productos(){

@@ -1,33 +1,46 @@
+*{
+    font-family: sans-serif;
+}
 body{
-    background-image: url("/images/istockphoto-477516876-2048x2048.jpg");
-    background-size: 2430px;
+   background-color: rgb(224, 224, 224);
 }
 .cabecera{
-    background-color: black;
     color: white;
      border:1px solid rgb(255, 255, 255);
-}
-.piedepagina{
-    background-color: black;
-    color: white;
-    height: 60px;
-    border:1px solid rgb(255, 255, 255);
+     background-image:url('../images/fondo-gradiente-estilo-futurista_23-2149128555.jpg');
+     background-size: 1920px;
 }
 .opciones{
-        text-align: center;
+text-align: center;
+border:3px solid rgb(255, 255, 255);
+margin-top:1px;
+
+
 }
-a{
-    background-color:rgb(50, 50, 167);
-    color: aliceblue;
-    width: 90px;
+.enlaces{
+    color: rgb(0, 0, 0);
+    width: 50px;
     text-align: center;
     font-size: 20px;
-     border:1px solid rgb(190, 186, 186);
+    margin: 6px;
+    bottom: 2;
+    text-decoration: none;
 }
 .cuerpo{
-    background-color: rgb(197, 198, 199);
     margin: 4px;
-     border:1px solid rgb(255, 255, 255);
+    border:2px solid rgb(255, 255, 255);
+}
+.piedepagina{
+    background-image:url('../images/fondo-gradiente-estilo-futurista_23-2149128555.jpg');
+   background-size: 1920px;
+    color: white;
+    height: 90px;
+    border:1px solid rgb(255, 255, 255);
+    position: fixed;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 h1{
   text-align: center;
@@ -35,9 +48,32 @@ h1{
 .textoPie{
    left: 20px;
    text-align: center;
-    
+   font-size: 30px;
+}
+table, td {
+ border: rgb(74, 153, 255) 5px solid;
+  border-radius: 20px;
+  background-color: aliceblue;
+}
+th{
+   border: rgb(74, 153, 255) 5px solid;
+  border-radius: 20px;
+  background-color: rgb(74, 153, 255);  
+}
+.labelCreacion{
+    font-family: sans-serif;
+    font-style: inherit;
     font-size: 20px;
 }
-table, th, td {
-  border:1px solid black;
+.emoji1{
+    width: 20px;
+    height: 20px;
+}
+.todoplantillas{
+    margin-left: 20px;
+}
+.logo{
+    position: relative;
+    top: -170px;
+    margin-left: 970px;
 }

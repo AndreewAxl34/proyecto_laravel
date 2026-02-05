@@ -13,7 +13,7 @@ class Productos extends Model
     {
       return $this->belongsTo(Categoria::class);
     }
-    public function proovedores()
+    public function proovedor()
     {
       return $this->belongsTo(Proovedores::class);
     }

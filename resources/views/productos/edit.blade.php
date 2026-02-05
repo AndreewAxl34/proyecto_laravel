@@ -2,7 +2,9 @@
 @section('title', 'Editar producto')
 
 @section('content')
- <div>
+ <div class="todoplantillas">
+<!-----fuentes----->
+  <link rel="stylesheet" href="{{ asset('css/colores.css') }}">
     <h2>Editar producto #{{ $productos->id }}</h2>
      <form method="POST" action="{{ route('productos.actualizar', $productos) }}">
       @csrf
@@ -33,6 +35,18 @@
         @endforeach
       </select>
     </div>
+
+      <div>
+      <label>Proveedor</label>
+      <select name="proovedor_id">
+         @foreach($proovedores as $p)
+           <option value="{{ $p->id }}" @selected(old('proovedor_id', $productos->proovedor_id) == $p->id)>
+              {{ $p->nombre }}
+           </option>
+        @endforeach
+      </select>
+    </div>
+
      <button>Guardar cambios</button>
     </form>
 </div>

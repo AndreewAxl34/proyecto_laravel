@@ -2,17 +2,21 @@
 @section('title', 'Modificar / Borrar')
 
 @section('content')
- <div>
+ <div class="todoplantillas">
+<!-----fuentes----->
+  <link rel="stylesheet" href="{{ asset('css/colores.css') }}">
     <h2>Gestionar productos</h2>
 
     <table>
      <thead>
        <tr>
-         <th>ID</th>
-         <th>Descripción</th>
-         <th>Categoría</th>
+          <th>ID</th>
+          <th>Descripción</th>
+          <th>Stock</th>
+          <th>Precio</th>
+          <th>Categoría</th>
+          <th>Proveedor</th>
          <th>Acciones</th>
-         <th>Proovedor</th>
        </tr>
      </thead>
      <tbody>
@@ -20,10 +24,12 @@
        <tr>
          <td>{{ $p->id }}</td>
          <td>{{ $p->descripcion }}</td>
+         <td>{{ $p->stock }}</td>
+         <td>{{ number_format($p->precio, 2) }}</td>
          <td>{{ $p->categoria?->nombre }}</td>
-         <td>{{ $p->proovedores?->nombre }}</td>
+         <td>{{ $p->proovedor?->nombre }}</td>
          <td>
-           <a href="{{ route('productos.edit', $p) }}">Editar</a>
+           <a class="otra" href="{{ route('productos.edit', $p) }}">Editar</a>
 
            <form method="POST" action="{{ route('productos.destruir', $p) }}">
             @csrf

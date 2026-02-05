@@ -20,10 +20,18 @@ class ProductController extends Controller
         $data = $request->validate([
             'nombre' => 'required|min:3'
         ]);
-        Categoria::create($data);
+        Proovedores::create($data);
         return redirect()->route('productos.anadirproovedor')->
         with('ok', 'Proovedor guardado correctamente');
     }
+
+    //Opcion 2_2 Borrar proovedor
+
+ #   public function borrarprove(Proovedores $proovedores){
+ #      $proovedores->delete();
+  #      return redirect()->route('productos.anadirproovedor')->
+  #      with('ok', 'Producto borrado');
+ #   }
 
     // Opcion3 Añadir Categorias 
     public function anadircategoria(){
@@ -40,30 +48,34 @@ class ProductController extends Controller
         return redirect()->route('productos.anadircategoria')->
         with('ok', 'Categoria guardado correctamente');
     }
+
+    //Opcion 3_2 Borrar Categoria
    
     //Opcion4: Entrada de datos 
     public function creacion(){
         $categorias=Categoria::orderBy('nombre')->get();
-        return view('productos.creacion',compact('categorias'));
+        $proovedores=Proovedores::orderBy('nombre')->get();
+        return view('productos.creacion',compact('categorias','proovedores'));
+        
     }
 
-    //Opcion5: Guardar datos formulario
+    //Opcion4_1: Guardar datos formulario
     public function tienda(Request $request){
        $data = $request->validate([
          'descripcion' => 'required|min:3',
          'stock' => 'required|integer|min:0',
          'precio' => 'required|numeric|min:0',
          'categoria_id' => 'required|exists:categorias,id',
-         'proovedor_id' => 'required|exists:proovedor_id',
+         'proovedor_id' => 'required|exists:proovedores,id',
         ]);
         Productos::create($data);
         return redirect()->route('productos.index')->
         with('ok', 'Producto guardado correctamente');
     }       
 
-    //Opcion3 listado general
+    //Opcion5 listado general
     public function index(){
-        $productos=Productos::with('categoria')->orderBy('id')->get();
+        $productos=Productos::with('categoria','proovedor')->orderBy('id')->get();
         return view('productos.index',compact('productos'));
     }
 
@@ -75,8 +87,7 @@ class ProductController extends Controller
    // Opcion4: resultados filtro 
     public function filterResults(Request $request){
       $request->validate([
-         'criterion' => 'required|in:stock_bajo,stock_alto,precio_alto,precio_bajo',
-      ]);
+         'criterion' => 'required|in:stock_bajo,stock_alto,precio_alto,precio_bajo']);
 
       $q = Productos::with('categoria');
 
@@ -100,9 +111,8 @@ class ProductController extends Controller
     }
     public function edit(Productos $productos){
         $categorias = Categoria::orderBy('nombre')->get();
-        return view('productos.edit', compact('productos', 'categorias'));
         $proovedores = Proovedores::orderBy('nombre')->get();
-        return view('productos.edit', compact('productos', 'proovedores'));
+        return view('productos.edit', compact('productos', 'categorias','proovedores'));
     }
 
     public function update(Request $request, Productos $productos){
@@ -111,7 +121,7 @@ class ProductController extends Controller
           'stock' => 'required|integer|min:0',
           'precio' => 'required|numeric|min:0',
           'categoria_id' => 'required|exists:categorias,id',
-          'proovedor_id' => 'required|exists:categorias,id',
+          'proovedor_id' => 'required|exists:proovedores,id',
         ]);
         $productos->update($data);
         return redirect()->route('productos.manage')->
