@@ -38,11 +38,11 @@
      </div>
      <br>
      <div>
-      <label class="labelCreacion">Proovedor</label>
-      <select name="proovedor_id">
-         <option value="">-- elige proovedor --</option>
-         @foreach($proovedores as $p)
-            <option value="{{ $p->id }}" @selected(old('proovedor_id') == $p->id)>
+      <label class="labelCreacion">Proveedor</label>
+      <select name="proveedor_id">
+         <option value="">-- elige proveedor --</option>
+         @foreach($proveedores as $p)
+            <option value="{{ $p->id }}" @selected(old('proveedor_id') == $p->id)>
               {{ $p->nombre }}
             </option>
        @endforeach

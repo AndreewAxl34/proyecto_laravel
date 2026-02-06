@@ -25,12 +25,13 @@
        margin-left:-1820px;">💻</div>
   <br>
     <a href="{{route('home')}}" class="enlaces">Inicio</a>
-    <a href="{{route('productos.anadirproovedor')}}" class="enlaces">Añadir Proveedor</a>
+    <a href="{{route('productos.anadirproveedor')}}" class="enlaces">Añadir Proveedor</a>
     <a href="{{route('productos.anadircategoria')}}" class="enlaces">Añadir Categoria</a>
     <a href="{{route('productos.creacion')}}" class="enlaces">Entrada de Datos</a>
     <a href="{{route('productos.index')}}" class="enlaces">Listado General</a>
     <a href="{{route('productos.filtro.form')}}" class="enlaces">Listado Filtrado</a>
     <a href="{{route('productos.manage')}}" class="enlaces">Modificar/Borrar</a>
+    <a href="{{route('productos.realizarcompra')}}" class="enlaces">Compra</a>
   <div style="
        font-size: 42px; 
        margin-left:1770px; 

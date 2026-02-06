@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('stock')->default(0);
             $table->decimal('precio', 8, 2)->default(0);
             $table->foreignId('categoria_id')->constrained('categorias')->cascadeOnDelete();
-            $table->foreignId('proovedor_id')->constrained('proovedores')->cascadeOnDelete();
+            $table->foreignId('proveedor_id')->constrained('proveedores')->cascadeOnDelete();
             $table->timestamps();
         });
     }

@@ -3,16 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Categoria;
+use App\Models\Compras;
 use App\Models\Productos;
 
-class Proovedores extends Model
+class Proveedores extends Model
 {
    protected $fillable=['nombre'];
    public function productos(){
        return $this->hasMany(Productos::class);
    }
-   public function categorias(){
-       return $this->hasMany(Categoria::class);
+   public function compra(){
+       return $this->hasMany(Compras::class);
    }
 }

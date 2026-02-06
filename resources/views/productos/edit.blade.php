@@ -38,9 +38,9 @@
 
       <div>
       <label>Proveedor</label>
-      <select name="proovedor_id">
-         @foreach($proovedores as $p)
-           <option value="{{ $p->id }}" @selected(old('proovedor_id', $productos->proovedor_id) == $p->id)>
+      <select name="proveedor_id">
+         @foreach($proveedores as $p)
+           <option value="{{ $p->id }}" @selected(old('proovedor_id', $productos->proveedor_id) == $p->id)>
               {{ $p->nombre }}
            </option>
         @endforeach

@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="{{ asset('css/colores.css') }}">
     <h2>Añadir la Proveedor<h2>
 
-    <form method="POST" action="{{ route('proovedores.guardar') }}">
+    <form method="POST" action="{{ route('proveedores.guardar') }}">
         @csrf
 
         <div>
@@ -24,7 +24,7 @@
             </tr>
           </thead>  
           <tbody>
-          @forelse($proovedores as $p)
+          @forelse($proveedores as $p)
             <tr>
                 <td>{{ $p-> nombre }}</td>
             </tr>
